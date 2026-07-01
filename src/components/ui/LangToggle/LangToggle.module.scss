@@ -1,0 +1,34 @@
+@use '../../../styles/mixins' as *;
+
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  @include glass;
+}
+
+.opt {
+  min-width: 38px;
+  padding: 0.35rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  border-radius: var(--radius-pill);
+  transition:
+    color var(--transition),
+    background var(--transition);
+}
+
+.opt:hover {
+  color: var(--color-heading);
+}
+
+.active {
+  color: var(--color-on-primary);
+  background: var(--grad-primary);
+}
+.active:hover {
+  color: var(--color-on-primary);
+}

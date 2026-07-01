@@ -1,0 +1,49 @@
+@use '../../../styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+  background: rgba(15, 17, 48, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  overflow-y: auto;
+}
+
+.panel {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100vh - 2 * var(--space-32));
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  @include glass-strong;
+}
+
+.close {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  color: var(--color-heading);
+  background: var(--color-border);
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.close:hover {
+  transform: rotate(90deg);
+  background: color-mix(in srgb, var(--color-primary) 28%, transparent);
+}

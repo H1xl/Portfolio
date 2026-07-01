@@ -1,0 +1,46 @@
+@property --shine-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.shine {
+  position: relative;
+  border-radius: var(--radius-lg);
+}
+
+.shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: var(--shine-width, 1.5px);
+  background: conic-gradient(
+    from var(--shine-angle),
+    transparent 0%,
+    var(--color-primary) 8%,
+    var(--color-accent-strong) 18%,
+    transparent 30%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: shine-spin var(--shine-duration, 9s) linear infinite;
+}
+
+@keyframes shine-spin {
+  to {
+    --shine-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shine::before {
+    animation: none;
+  }
+}

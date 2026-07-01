@@ -1,0 +1,92 @@
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-orbs);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: var(--orb-opacity);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.orb1 {
+  width: clamp(280px, 44vw, 620px);
+  height: clamp(280px, 44vw, 620px);
+  background: var(--orb-1);
+  top: -8vh;
+  left: -6vw;
+  animation: drift1 26s ease-in-out infinite alternate;
+}
+
+.orb2 {
+  width: clamp(240px, 38vw, 540px);
+  height: clamp(240px, 38vw, 540px);
+  background: var(--orb-2);
+  top: 6vh;
+  right: -8vw;
+  animation: drift2 30s ease-in-out infinite alternate;
+}
+
+.orb3 {
+  width: clamp(220px, 34vw, 500px);
+  height: clamp(220px, 34vw, 500px);
+  background: var(--orb-3);
+  bottom: -12vh;
+  left: 18vw;
+  animation: drift3 34s ease-in-out infinite alternate;
+}
+
+.orb4 {
+  width: clamp(200px, 30vw, 440px);
+  height: clamp(200px, 30vw, 440px);
+  background: var(--orb-4);
+  bottom: 4vh;
+  right: 12vw;
+  animation: drift4 28s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6vw, 8vh, 0) scale(1.12);
+  }
+}
+@keyframes drift2 {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  to {
+    transform: translate3d(-7vw, 6vh, 0) scale(1);
+  }
+}
+@keyframes drift3 {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5vw, -7vh, 0) scale(1.15);
+  }
+}
+@keyframes drift4 {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+  to {
+    transform: translate3d(-5vw, -5vh, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none !important;
+  }
+}
