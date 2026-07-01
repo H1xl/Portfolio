@@ -1,0 +1,101 @@
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaFigma,
+} from 'react-icons/fa';
+import {
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiRedux,
+  SiReactrouter,
+  SiReactquery,
+  SiSass,
+  SiTailwindcss,
+  SiStyledcomponents,
+  SiCssmodules,
+  SiMui,
+  SiBootstrap,
+  SiExpress,
+  SiNestjs,
+  SiPostgresql,
+  SiMysql,
+  SiSupabase,
+  SiVite,
+  SiWebpack,
+  SiEslint,
+  SiPostman,
+  SiDocker,
+  SiFramer,
+} from 'react-icons/si';
+import { TbApi, TbStack2 } from 'react-icons/tb';
+
+// color: null → иконка окрашивается в цвет темы (для «монохромных» брендов)
+export const skillCategories = [
+  {
+    id: 'languages',
+    label: { ru: 'Языки', en: 'Languages' },
+    items: [
+      { name: 'HTML5', Icon: FaHtml5, color: '#e34f26' },
+      { name: 'CSS3', Icon: FaCss3Alt, color: '#1572b6' },
+      { name: 'JavaScript', Icon: SiJavascript, color: '#e8b911' },
+      { name: 'TypeScript', Icon: SiTypescript, color: '#3178c6' },
+    ],
+  },
+  {
+    id: 'frontend',
+    label: { ru: 'Frontend', en: 'Frontend' },
+    items: [
+      { name: 'React', Icon: FaReact, color: '#3ac6e6' },
+      { name: 'Next.js', Icon: SiNextdotjs, color: null },
+      { name: 'Redux Toolkit', Icon: SiRedux, color: '#764abc' },
+      { name: 'React Router', Icon: SiReactrouter, color: '#ca4245' },
+      { name: 'React Query', Icon: SiReactquery, color: '#ff4154' },
+      { name: 'Zustand', Icon: TbStack2, color: '#a9743e' },
+    ],
+  },
+  {
+    id: 'styling',
+    label: { ru: 'Стилизация и UI', en: 'Styling & UI' },
+    items: [
+      { name: 'Sass', Icon: SiSass, color: '#cc6699' },
+      { name: 'Tailwind CSS', Icon: SiTailwindcss, color: '#06b6d4' },
+      { name: 'Framer Motion', Icon: SiFramer, color: '#0055ff' },
+      { name: 'Styled Components', Icon: SiStyledcomponents, color: '#db7093' },
+      { name: 'CSS Modules', Icon: SiCssmodules, color: null },
+      { name: 'Material UI', Icon: SiMui, color: '#007fff' },
+      { name: 'Bootstrap', Icon: SiBootstrap, color: '#7952b3' },
+    ],
+  },
+  {
+    id: 'backend',
+    label: { ru: 'Backend и БД', en: 'Backend & DB' },
+    items: [
+      { name: 'Node.js', Icon: FaNodeJs, color: '#539e43' },
+      { name: 'Express', Icon: SiExpress, color: null },
+      { name: 'REST API', Icon: TbApi, color: '#5c79ac' },
+      { name: 'NestJS', Icon: SiNestjs, color: '#e0234e' },
+      { name: 'PostgreSQL', Icon: SiPostgresql, color: '#4169e1' },
+      { name: 'MySQL', Icon: SiMysql, color: '#4479a1' },
+      { name: 'Supabase', Icon: SiSupabase, color: '#3fcf8e' },
+    ],
+  },
+  {
+    id: 'tools',
+    label: { ru: 'Инструменты и DevOps', en: 'Tools & DevOps' },
+    items: [
+      { name: 'Git', Icon: FaGitAlt, color: '#f05032' },
+      { name: 'GitHub', Icon: FaGithub, color: null },
+      { name: 'Vite', Icon: SiVite, color: '#646cff' },
+      { name: 'Figma', Icon: FaFigma, color: '#f24e1e' },
+      { name: 'Webpack', Icon: SiWebpack, color: '#1c78c0' },
+      { name: 'Docker', Icon: SiDocker, color: '#2496ed' },
+      { name: 'ESLint / Prettier', Icon: SiEslint, color: '#4b32c3' },
+      { name: 'Postman', Icon: SiPostman, color: '#ff6c37' },
+    ],
+  },
+];
