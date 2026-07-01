@@ -1,0 +1,94 @@
+@use '../../../styles/mixins' as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 3rem);
+  align-items: start;
+
+  @include lg {
+    grid-template-columns: 1.4fr 0.6fr;
+  }
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.lead {
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-heading);
+  max-width: 30ch;
+}
+
+.para {
+  color: var(--color-text);
+  font-size: 1.02rem;
+  max-width: 62ch;
+}
+
+.quote {
+  position: relative;
+  padding: var(--space-24);
+  padding-left: var(--space-48);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--color-accent-strong);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  @include glass;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: var(--space-20);
+  left: var(--space-16);
+  font-size: 1.1rem;
+  color: var(--color-accent-strong);
+  opacity: 0.8;
+}
+
+.statsCol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-16);
+
+  @include lg {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-24);
+  border-radius: var(--radius);
+  text-align: center;
+  @include glass;
+
+  @include lg {
+    text-align: left;
+  }
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
