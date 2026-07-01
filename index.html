@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#809bc4" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="author" content="Александр Хоменко (H1xl)" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="H1xl, Александр Хоменко, frontend разработчик, fullstack, React, TypeScript, портфолио, веб-разработка"
+    />
+    <meta
+      name="description"
+      content="Александр Хоменко (H1xl) — Frontend / Fullstack разработчик. Создаю быстрые, удобные и красивые веб-приложения на React и TypeScript."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="H1xl — Frontend / Fullstack разработчик" />
+    <meta
+      property="og:description"
+      content="Код, который работает. Интерфейсы, которые любят."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="H1xl — Портфолио" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:image" content="/logo512.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="H1xl — Frontend / Fullstack разработчик" />
+    <meta
+      name="twitter:description"
+      content="Код, который работает. Интерфейсы, которые любят."
+    />
+    <meta name="twitter:image" content="/logo512.png" />
+
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Fonts: Unbounded (display), Manrope (body), JetBrains Mono (mono) — с кириллицей.
+         Асинхронная загрузка, чтобы не блокировать первичный рендер. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;600;700;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- Инициализация темы/языка до первой отрисовки (без мигания) -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+          var l = localStorage.getItem('lang');
+          document.documentElement.setAttribute('lang', l === 'en' ? 'en' : 'ru');
+        } catch (e) {}
+      })();
+    </script>
+
+    <title>Александр Хоменко — Frontend / Fullstack разработчик</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Александр Хоменко",
+        "alternateName": "H1xl",
+        "jobTitle": "Frontend / Fullstack разработчик",
+        "url": "https://h1xl.github.io/portfolio",
+        "sameAs": ["https://github.com/H1xl", "https://t.me/H1xlBit"]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>Для работы сайта нужно включить JavaScript.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
