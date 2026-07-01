@@ -1,0 +1,146 @@
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  height: var(--header-h);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+.logoText {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.cursor {
+  color: var(--color-primary);
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+
+  @include lg {
+    display: flex;
+  }
+}
+
+.navLink {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  border-radius: var(--radius-pill);
+  transition:
+    color var(--transition),
+    background var(--transition);
+}
+
+.navLink:hover {
+  color: var(--color-heading);
+  background: var(--glass-bg);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.cta {
+  display: none;
+
+  @include md {
+    display: inline-flex;
+  }
+}
+
+.burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  font-size: 1.3rem;
+  color: var(--color-heading);
+  @include glass;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  margin: 0 var(--space-16);
+  padding: var(--space-20);
+  border-radius: var(--radius-lg);
+  @include glass-strong;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLink {
+  text-align: left;
+  padding: 0.85rem 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  border-bottom: 1px solid var(--color-border);
+  transition: color var(--transition);
+}
+
+.mobileLink:hover {
+  color: var(--color-primary-strong);
+}
