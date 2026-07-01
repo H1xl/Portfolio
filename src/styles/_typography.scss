@@ -1,0 +1,35 @@
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-heading);
+}
+
+h2 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-heading);
+}
+
+h3,
+h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 0.8125rem;
+}
+
+code,
+kbd,
+samp,
+.mono {
+  font-family: var(--font-mono);
+}

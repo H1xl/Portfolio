@@ -1,0 +1,50 @@
+// ===== Breakpoints (mobile-first) =====
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+@mixin sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+// ===== Glassmorphism =====
+@mixin glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-card);
+}
+
+@mixin glass-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(calc(var(--glass-blur) + 6px)) saturate(150%);
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 6px)) saturate(150%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-card);
+}
+
+// Убрать анимации при prefers-reduced-motion
+@mixin reduce-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
