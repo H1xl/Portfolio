@@ -20,6 +20,24 @@
   pointer-events: none;
 }
 
+// Аватар в центре; иконки орбитируют вокруг (z-index 50 → часть спереди, часть сзади)
+.avatar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 50;
+  width: 38%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-surface-solid);
+  border: 3px solid var(--glass-border);
+  box-shadow:
+    0 12px 30px rgba(29, 32, 56, 0.28),
+    0 0 0 8px color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
 .icon {
   position: absolute;
   left: 50%;

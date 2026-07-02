@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiSearch, FiX } from 'react-icons/fi';
 
 import { useLanguage } from '../context/LanguageContext';
-import { projects, categoryOrder } from '../data/projects';
+import { useProjects } from '../hooks/useProjects';
+import { categoryOrder } from '../data/projects';
 import Button from '../components/ui/Button/Button';
 import ProjectCard from '../components/projects/ProjectCard/ProjectCard';
 import ProjectModal from '../components/projects/ProjectModal/ProjectModal';
@@ -12,6 +13,7 @@ import styles from './ProjectsPage.module.scss';
 
 export default function ProjectsPage() {
   const { t, lang } = useLanguage();
+  const { projects } = useProjects();
   const p = t.projectsPage;
 
   const [query, setQuery] = useState('');
@@ -28,14 +30,14 @@ export default function ProjectsPage() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return projects.filter((pr) => {
-      const inCat = category === 'all' || pr.categories.includes(category);
+      const inCat = category === 'all' || (pr.categories || []).includes(category);
       const inQuery =
         !q ||
-        pr.title.ru.toLowerCase().includes(q) ||
-        pr.title.en.toLowerCase().includes(q);
+        (pr.title?.ru || '').toLowerCase().includes(q) ||
+        (pr.title?.en || '').toLowerCase().includes(q);
       return inCat && inQuery;
     });
-  }, [query, category]);
+  }, [query, category, projects]);
 
   const n = filtered.length;
   const pluralWord = (() => {

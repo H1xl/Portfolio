@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 
 import { useLanguage } from '../../../context/LanguageContext';
-import { featuredProjects } from '../../../data/projects';
+import { useProjects } from '../../../hooks/useProjects';
 import Reveal from '../../ui/Reveal/Reveal';
 import Button from '../../ui/Button/Button';
 import ProjectCard from '../../projects/ProjectCard/ProjectCard';
@@ -12,6 +12,7 @@ import styles from './Projects.module.scss';
 
 export default function Projects() {
   const { t } = useLanguage();
+  const { featured } = useProjects();
   const [active, setActive] = useState(null);
   const [open, setOpen] = useState(false);
 
@@ -42,7 +43,7 @@ export default function Projects() {
         </Reveal>
 
         <div className={styles.grid}>
-          {featuredProjects.map((p, i) => (
+          {featured.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} onOpen={openModal} />
           ))}
         </div>

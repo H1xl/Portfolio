@@ -15,6 +15,8 @@ import {
   SiPostgresql,
 } from 'react-icons/si';
 
+import { SITE } from '../../../data/config';
+import { resolveAsset } from '../../../utils/asset';
 import styles from './IconCloud.module.scss';
 
 // Иконки для 3D-облака (color: null → цвет темы).
@@ -155,6 +157,14 @@ export default function IconCloud() {
   return (
     <div className={styles.cloud} ref={containerRef} aria-hidden="true">
       <span className={styles.glow} />
+      {SITE.avatarUrl && (
+        <img
+          className={styles.avatar}
+          src={resolveAsset(SITE.avatarUrl)}
+          alt=""
+          decoding="async"
+        />
+      )}
       {ICONS.map((item, i) => {
         const { Icon } = item;
         return (
