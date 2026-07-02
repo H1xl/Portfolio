@@ -1,150 +1,58 @@
-// ЗАГЛУШКИ проектов — замени на свои. Поля title/short/long переведены (ru/en).
-// categories: 'commercial' | 'pet' | 'design' | 'api' | 'learning' (можно несколько)
-// links.github / links.live: строка-URL или null. Если null — в модалке покажется
-// сообщение «поддержка проекта завершена».
-// featured: true — попадает в блок «Избранные» на главной (нужно 3).
-// accent: 0..5 — пресет градиента для превью-карточки (если image не задан).
-// image: путь к скриншоту-превью, напр. '/projects/foo.png' (файл в public/projects/)
-//        или внешний URL. null/отсутствует — показывается градиентная заглушка «</>».
-
 export const projects = [
   {
-    id: 'analytics-dashboard',
+    id: 'promo-24ttl',
     featured: true,
     accent: 0,
-    image: null, // напр. '/projects/analytics.png'
-    title: { ru: 'Аналитическая панель', en: 'Analytics Dashboard' },
+    image: '/projects/24TTL-promo.png',
+    title: { ru: 'Промо-лендинг 24TTL', en: 'Landing Page 24TTL' },
     short: {
-      ru: 'Админ-панель с аналитикой и управлением данными в реальном времени.',
-      en: 'Admin panel with real-time analytics and data management.',
+      ru: 'Промо-лендинг для сбора заявок бизнес-партнёров с автоматизацией обработки данных.',
+      en: 'Landing page for collecting business partner applications with automated data processing.',
     },
     long: {
-      ru: 'Платформа для визуализации бизнес-метрик: интерактивные графики, фильтры, таблицы и экспорт отчётов. Реализованы авторизация, роли пользователей и обновление данных в реальном времени.',
-      en: 'A platform for visualizing business metrics: interactive charts, filters, tables and report export. Includes auth, user roles and real-time data updates.',
+      ru: 'Разработал и поддерживал промо-лендинг для новогодней маркетинговой кампании компании. Цель проекта — автоматизировать сбор заявок от бизнес-партнёров и сократить ручную обработку данных. Спроектировал адаптивные формы сбора данных с клиентской валидацией, интегрировал frontend с backend API. После запуска 3 месяца поддерживал проект: дорабатывал интерфейс по обратной связи, устранял дефекты.',
+      en: 'Developed and maintained a landing page for the company’s New Year marketing campaign. The goal of the project was to automate the collection of applications from business partners and reduce manual data processing. Designed adaptive data collection forms with client-side validation, integrated frontend with backend API. After the launch, supported the project for 3 months: refined the interface based on feedback, fixed bugs.',
     },
-    tech: ['React', 'TypeScript', 'Redux Toolkit', 'REST API', 'Recharts'],
-    categories: ['commercial', 'api', 'design'],
-    links: { github: 'https://github.com/H1xl', live: 'https://github.com/H1xl' },
-  },
-  {
-    id: 'shoply-ecommerce',
-    featured: true,
-    accent: 1,
-    title: { ru: 'Shoply — интернет-магазин', en: 'Shoply — e-commerce' },
-    short: {
-      ru: 'Интернет-магазин с корзиной, фильтрами и оформлением заказа.',
-      en: 'Online store with cart, filters and checkout flow.',
-    },
-    long: {
-      ru: 'Магазин с каталогом, поиском, фильтрацией по параметрам, корзиной, избранным и оформлением заказа. Данные и авторизация — на Supabase, интерфейс адаптивный.',
-      en: 'A shop with catalog, search, faceted filtering, cart, wishlist and checkout. Data and auth powered by Supabase, fully responsive UI.',
-    },
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase'],
-    categories: ['commercial', 'api'],
-    links: { github: 'https://github.com/H1xl', live: null },
-  },
-  {
-    id: 'taskflow',
-    featured: true,
-    accent: 2,
-    title: { ru: 'TaskFlow — доски задач', en: 'TaskFlow — task boards' },
-    short: {
-      ru: 'Приложение для управления задачами с досками и drag-and-drop.',
-      en: 'Task management app with boards and drag-and-drop.',
-    },
-    long: {
-      ru: 'Канбан-доски с колонками, перетаскиванием карточек, метками и фильтрами. Состояние приложения на Zustand, серверная часть на Node.js.',
-      en: 'Kanban boards with columns, drag-and-drop cards, labels and filters. App state on Zustand, backend on Node.js.',
-    },
-    tech: ['React', 'TypeScript', 'Zustand', 'Node.js'],
-    categories: ['commercial'],
-    links: { github: 'https://github.com/H1xl', live: 'https://github.com/H1xl' },
-  },
-  {
-    id: 'weather-app',
-    featured: false,
-    accent: 3,
-    title: { ru: 'Погода', en: 'Weather App' },
-    short: {
-      ru: 'Прогноз погоды по геолокации с почасовой детализацией.',
-      en: 'Geolocation-based weather forecast with hourly details.',
-    },
-    long: {
-      ru: 'Небольшое приложение прогноза погоды: определение города по геолокации, почасовой и недельный прогноз, анимированные иконки. Данные — из открытого погодного API.',
-      en: 'A small weather app: city detection by geolocation, hourly and weekly forecast, animated icons. Data from an open weather API.',
-    },
-    tech: ['React', 'REST API', 'CSS Modules'],
-    categories: ['pet', 'api', 'learning'],
-    links: { github: 'https://github.com/H1xl', live: null },
-  },
-  {
-    id: 'portfolio-site',
-    featured: false,
-    accent: 4,
-    title: { ru: 'Сайт-портфолио', en: 'Portfolio site' },
-    short: {
-      ru: 'Личный сайт-портфолио с анимациями и переключением тем.',
-      en: 'Personal portfolio site with animations and theme switching.',
-    },
-    long: {
-      ru: 'Одностраничный сайт-портфолио на React с glassmorphism-дизайном, плавными анимациями на Framer Motion, светлой и тёмной темами и поддержкой двух языков.',
-      en: 'A single-page React portfolio with glassmorphism design, smooth Framer Motion animations, light/dark themes and bilingual support.',
-    },
-    tech: ['React', 'Framer Motion', 'Sass'],
-    categories: ['pet', 'design'],
-    links: { github: 'https://github.com/H1xl', live: 'https://github.com/H1xl' },
-  },
-  {
-    id: 'chat-realtime',
-    featured: false,
-    accent: 5,
-    title: { ru: 'Realtime-чат', en: 'Realtime Chat' },
-    short: {
-      ru: 'Чат в реальном времени с комнатами и уведомлениями.',
-      en: 'Real-time chat with rooms and notifications.',
-    },
-    long: {
-      ru: 'Чат на WebSocket: комнаты, список онлайн-участников, индикатор набора текста и уведомления. Клиент на React, сервер на Node.js и Express.',
-      en: 'A WebSocket chat: rooms, online users list, typing indicator and notifications. React client, Node.js + Express server.',
-    },
-    tech: ['React', 'Node.js', 'Express', 'WebSocket'],
-    categories: ['pet', 'api', 'learning'],
-    links: { github: 'https://github.com/H1xl', live: null },
-  },
-  {
-    id: 'ui-kit',
-    featured: false,
-    accent: 0,
-    title: { ru: 'UI-кит компонентов', en: 'Component UI Kit' },
-    short: {
-      ru: 'Библиотека переиспользуемых компонентов с документацией.',
-      en: 'A library of reusable components with docs.',
-    },
-    long: {
-      ru: 'Набор доступных UI-компонентов (кнопки, инпуты, модалки, тосты) с единой дизайн-системой, темизацией и документацией в Storybook.',
-      en: 'A set of accessible UI components (buttons, inputs, modals, toasts) with a shared design system, theming and Storybook docs.',
-    },
-    tech: ['React', 'Styled Components', 'Storybook'],
-    categories: ['design', 'learning'],
-    links: { github: 'https://github.com/H1xl', live: null },
-  },
-  {
-    id: 'movies-explorer',
-    featured: false,
-    accent: 1,
-    title: { ru: 'Кинопоиск проектов', en: 'Movies Explorer' },
-    short: {
-      ru: 'Поиск фильмов с сохранением избранного.',
-      en: 'Movie search with a saved favorites list.',
-    },
-    long: {
-      ru: 'Приложение для поиска фильмов через внешний API: фильтры по жанрам, страницы деталей и сохранение избранного в локальном хранилище.',
-      en: 'A movie search app powered by an external API: genre filters, detail pages and favorites saved in local storage.',
-    },
-    tech: ['React', 'REST API', 'Tailwind CSS'],
-    categories: ['pet', 'api'],
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    categories: ['commercial', 'design'],
     links: { github: null, live: null },
   },
+  {
+    id: 'your-project',
+    featured: true,
+    accent: 1,
+    image: null,
+    title: { ru: 'Здесь может быть ваш проект', en: 'Your project may be here' },
+    short: {
+      ru: 'Готов к сотрудничеству и новым задачам. Свяжитесь со мной!',
+      en: 'Ready for collaboration and new challenges. Get in touch!',
+    },
+    long: {
+      ru: 'Могу помочь с разработкой веб-приложений, лендингов, SPA, PWA, интеграцией с API и базами данных. Опыт работы с React, Next.js, TypeScript, Tailwind CSS, Supabase и другими технологиями.',
+      en: 'I can assist with web application development, landing pages, SPA, PWA, API integration, and databases. Experienced with React, Next.js, TypeScript, Tailwind CSS, Supabase, and other technologies.',
+    },
+    tech: [ 'React', 'TypeScript', 'Tailwind CSS' ],
+    categories: ['commercial'],
+    links: { github: null, live: null },
+  },
+  {
+    id: 'sitiy-zver',
+    featured: true,
+    accent: 2,
+    image: '/projects/sitiy-zver.jpg',
+    title: { ru: 'Интернет-магазин зоотоваров - «Сытый зверь»', en: 'Pet Supplies E-commerce - «Sated Beast»' },
+    short: {
+      ru: 'E-commerce платформа с нуля для сети зоотоваров — первый онлайн-канал продаж компании. Полный fullstack-цикл: от каталога и API до продакшена.',
+      en: 'E-commerce platform built from scratch for a pet supplies chain — the company’s first online sales channel. Full fullstack cycle: from catalog and API to production.',
+    },
+    long: {
+      ru: 'Разработал интернет-магазин с нуля для сети зоотоваров в Ставропольском и Краснодарском крае — первый онлайн-канал продаж компании. Взял на себя весь стек: React/TypeScript на фронтенде, ASP.NET Core (C#) на бэкенде, PostgreSQL для хранения данных. Спроектировал и реализовал REST API (20+ эндпоинтов), бизнес-логику и модели данных, участвовал в проектировании архитектуры приложения. После релиза 6 месяцев поддерживал продукт: устранял дефекты, внедрял новые требования.',
+      en: 'Developed an e-commerce platform from scratch for a pet supplies chain — the company’s first online sales channel. Full fullstack cycle: from catalog and API to production.',
+    },
+    tech: ['React', 'TypeScript', 'Redux Toolkit', 'ASP.NET Core', 'C#', 'PostgreSQL', 'Rest API', 'Tailwind CSS', 'JWT'],
+    categories: ['commercial', 'design', 'api'],
+    links: { github: null, live: null },
+  }
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);

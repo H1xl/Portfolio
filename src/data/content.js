@@ -32,15 +32,15 @@ export const content = {
       title: 'Немного о том, как я работаю',
       lead: 'Помогаю превращать идеи в удобные, быстрые и надёжные веб-приложения.',
       paragraphs: [
-        'Я frontend/fullstack-разработчик. Специализируюсь на современных интерфейсах на React и TypeScript, а при необходимости беру на себя и серверную часть.',
-        'Люблю чистый код, продуманный UX и внимание к деталям — от первого макета до продакшена и поддержки.',
+        'Frontend/fullstack-разработчик с опытом коммерческой разработки на React и TypeScript — от промо-лендингов для маркетинговых кампаний до e-commerce платформы, написанной с нуля.',
+        'Разбираюсь не только во фронтенде, но и в backend и БД — быстро нахожу общий язык с командой и закрываю задачи на стыке frontend/backend. Быстро осваиваю новый стек и довожу проекты до релиза в срок.',
       ],
       quote:
         'Чистый код, внимание к деталям и любовь к дизайну — мой подход к каждой задаче.',
       stats: [
-        { value: '2+', label: 'года опыта' },
-        { value: '15+', label: 'проектов' },
-        { value: '100+', label: 'коммитов' },
+        { value: '1+', label: 'года коммерческого опыта' },
+        { value: '15+', label: 'проектов в портфолио' },
+        { value: '95+', label: 'Lighthouse и Performance метрики в среднем' },
       ],
     },
     skills: {
@@ -157,15 +157,15 @@ export const content = {
       title: 'A bit about how I work',
       lead: 'I help turn ideas into usable, fast and reliable web applications.',
       paragraphs: [
-        "I'm a frontend/fullstack developer focused on modern interfaces with React and TypeScript — and I can take on the backend when needed.",
-        'I care about clean code, thoughtful UX and attention to detail — from the first mockup to production and maintenance.',
+        "Frontend/fullstack developer with experience in commercial development using React and TypeScript – from promotional landing pages for marketing campaigns to an e-commerce platform built from scratch.",
+        'I’m knowledgeable not only in frontend but also in backend and databases—I quickly connect with the team and tackle tasks at the frontend/backend intersection. I quickly master a new stack and deliver projects on time.',
       ],
       quote:
         'Clean code, attention to detail and a love for design — that’s my approach to every task.',
       stats: [
-        { value: '2+', label: 'years of experience' },
-        { value: '15+', label: 'projects' },
-        { value: '100+', label: 'commits' },
+        { value: '1+', label: 'years of commercial experience' },
+        { value: '15+', label: 'projects in portfolio' },
+        { value: '95+', label: 'Lighthouse and Performance metrics on average' },
       ],
     },
     skills: {

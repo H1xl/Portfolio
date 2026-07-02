@@ -1,6 +1,3 @@
-// image: путь к фото места обучения/курса, напр. '/education/college.jpg'
-// (файл в public/education/) или внешний URL. Показывается как слегка
-// заблюренный фон карточки (~9% непрозрачности). null — фона нет.
 export const education = {
   formal: {
     institution: {
@@ -13,34 +10,30 @@ export const education = {
     },
     period: '2021 — 2025',
     degree: { ru: 'Колледж · СПО', en: 'College degree' },
-    image: null, // напр. '/education/college.jpg'
+    image: '/education/sks-logo.jpg',
   },
 
-  // ЗАГЛУШКИ курсов — замени на свои пройденные курсы.
   courses: [
     {
-      title: { ru: 'React — с нуля до профи', en: 'React — from zero to pro' },
-      platform: { ru: 'Онлайн-курс', en: 'Online course' },
+      title: { 
+        ru: 'Курс «React-разработчик»', 
+        en: 'React Developer Course' },
+      platform: { 
+        ru: 'Яндекс Практикум', 
+        en: 'Yandex Practicum' },
+      year: '2025',
+      image: '/education/YaPracticum-logo.png',
+    },
+    {
+      title: {
+        ru: 'Курс «JavaScript»',
+        en: 'JavaScript Course',
+      },
+      platform: { 
+        ru: 'Skillbox', 
+        en: 'Skillbox' },
       year: '2023',
-      image: null,
-    },
-    {
-      title: {
-        ru: 'TypeScript для разработчиков',
-        en: 'TypeScript for developers',
-      },
-      platform: { ru: 'Онлайн-курс', en: 'Online course' },
-      year: '2024',
-      image: null,
-    },
-    {
-      title: {
-        ru: 'Fullstack: Node.js + PostgreSQL',
-        en: 'Fullstack: Node.js + PostgreSQL',
-      },
-      platform: { ru: 'Онлайн-курс', en: 'Online course' },
-      year: '2024',
-      image: null,
+      image: '/education/SkillBox-logo.png',
     },
   ],
 };
