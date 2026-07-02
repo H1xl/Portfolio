@@ -12,7 +12,9 @@
 }
 
 .scrolled {
-  background: var(--glass-bg);
+  // strong (почти непрозрачный) фон — текст навигации читается поверх любого
+  // контента даже если backdrop-filter не применился
+  background: var(--glass-bg-strong);
   backdrop-filter: blur(var(--glass-blur)) saturate(140%);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
   border-bottom-color: var(--color-border);
