@@ -9,13 +9,13 @@ export const SITE = {
   avatarUrl: 'https://github.com/H1xl.png?size=240',
 
   // Внешний источник проектов (см. docs/PROJECTS_REPO.md). Пусто — локальные данные.
-  projectsUrl: '',
+  projectsUrl: 'https://raw.githubusercontent.com/H1xl/Portfolio-data/main/projects.json',
 
   links: {
     github: 'https://github.com/H1xl',
     telegram: 'https://t.me/H1xlBit',
-    email: 'alexandrhomenko.business@yandex.ru',
-    linkedin: '',
+    email: 'alexandrhomenko.business@mail.ru',
+    linkedin: 'https://www.linkedin.com/in/H1xl',
   },
 
   resumeUrl: '',
