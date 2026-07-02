@@ -103,7 +103,7 @@ export default function Modal({
             >
               <FiX aria-hidden="true" />
             </button>
-            {children}
+            <div className={styles.scroll}>{children}</div>
           </motion.div>
         </motion.div>
       )}
