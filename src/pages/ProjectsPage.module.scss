@@ -1,0 +1,153 @@
+@use '../styles/mixins' as *;
+
+.page {
+  padding-top: calc(var(--header-h) * 0.5 + clamp(2rem, 5vw, 3.5rem));
+  padding-bottom: clamp(2rem, 6vw, 4rem);
+  min-height: 72vh;
+}
+
+.back {
+  margin-bottom: var(--space-24);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  margin-bottom: var(--space-32);
+  max-width: 640px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+}
+
+.subtitle {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+.search {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.85rem 2.6rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  border-radius: var(--radius-pill);
+  @include glass;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent);
+}
+
+.clearSearch {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--color-muted);
+  transition:
+    color var(--transition),
+    background var(--transition);
+}
+
+.clearSearch:hover {
+  color: var(--color-heading);
+  background: var(--color-border);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.chip {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  border-radius: var(--radius-pill);
+  @include glass;
+  transition:
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.chip:hover {
+  color: var(--color-heading);
+  transform: translateY(-1px);
+}
+
+.chipActive {
+  color: var(--color-on-primary);
+  background: var(--grad-primary);
+  border-color: transparent;
+}
+
+.chipActive:hover {
+  color: var(--color-on-primary);
+}
+
+.count {
+  margin-bottom: var(--space-24);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+
+  @include sm {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-64) 0;
+  text-align: center;
+  color: var(--color-muted);
+}
